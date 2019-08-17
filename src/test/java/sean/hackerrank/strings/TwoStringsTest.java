@@ -3,7 +3,9 @@ package sean.hackerrank.strings;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static sean.hackerrank.strings.TwoStrings.*;
+import static sean.hackerrank.strings.TwoStrings.NO;
+import static sean.hackerrank.strings.TwoStrings.YES;
+import static sean.hackerrank.strings.TwoStrings.twoStrings;
 
 class TwoStringsTest {
 

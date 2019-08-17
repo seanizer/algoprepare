@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 public class LinkedList<T> implements Iterable<T> {
     private T value;
     private LinkedList<T> next;
+
     public LinkedList(T value) {
         this.value = value;
     }

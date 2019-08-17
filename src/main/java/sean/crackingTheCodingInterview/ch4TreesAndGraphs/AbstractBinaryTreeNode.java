@@ -1,6 +1,10 @@
 package sean.crackingTheCodingInterview.ch4TreesAndGraphs;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Queue;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -9,6 +13,7 @@ abstract class AbstractBinaryTreeNode<T, N extends AbstractBinaryTreeNode<T, N>>
     private final T value;
     protected N left;
     protected N right;
+
     protected AbstractBinaryTreeNode(T value) {
         this.value = value;
     }

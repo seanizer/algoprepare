@@ -1,17 +1,20 @@
 package sean.hackerrank.mixed;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static sean.hackerrank.mixed.MaxSubSetSum.maxSubsetSum;
 
+@Disabled("Not implemented yet")
 class MaxSubSetSumTest {
     @ParameterizedTest
     @EnumSource(Scenario.class)
     void subSetSumMax(Scenario scenario) {
-        assertThat(MaxSubSetSum.maxSubsetSum(scenario.arr)).isEqualTo(scenario.expectation);
+        assertThat(maxSubsetSum(scenario.arr)).isEqualTo(scenario.expectation);
     }
 
     private enum Scenario {

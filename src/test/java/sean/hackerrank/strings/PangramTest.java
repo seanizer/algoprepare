@@ -3,7 +3,9 @@ package sean.hackerrank.strings;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static sean.hackerrank.strings.Pangram.*;
+import static sean.hackerrank.strings.Pangram.NO_PANGRAM;
+import static sean.hackerrank.strings.Pangram.PANGRAM;
+import static sean.hackerrank.strings.Pangram.pangrams;
 
 class PangramTest {
 

@@ -1,11 +1,13 @@
 package sean.hackerrank.recursion;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static sean.hackerrank.recursion.CrosswordPuzzle.crosswordPuzzle;
 import static sean.util.ArrayHelper.arr;
 
+@Disabled("Not implemented yet")
 class CrosswordPuzzleTest {
 
     @Test

@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static sean.crackingTheCodingInterview.ch1ArraysAndStrings.MatrixHelper.*;
+import static sean.crackingTheCodingInterview.ch1ArraysAndStrings.MatrixHelper.drawMatrix;
+import static sean.crackingTheCodingInterview.ch1ArraysAndStrings.MatrixHelper.row;
+import static sean.crackingTheCodingInterview.ch1ArraysAndStrings.MatrixHelper.rows;
 import static sean.crackingTheCodingInterview.ch1ArraysAndStrings.RotateMatrix.rotateClockwise;
 
 class RotateMatrixTest {
