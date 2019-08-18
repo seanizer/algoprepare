@@ -12,34 +12,36 @@ Output:
 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
  */
 public class Partition {
-    static <T extends Comparable<T>> void partition(LinkedList<T> list, T partitionPoint) {
-        LinkedList<T> clone = list.copy();
-        LinkedList<T> lowPointer = list;
-        LinkedList<T> highPointer = list.getNext();
-        while (highPointer != null) {
-            T value = highPointer.getValue();
-            if (value.compareTo(partitionPoint) <= 0) {
-                LinkedList<T> next = lowPointer.getNext();
-                LinkedList<T> newNode = new LinkedList<>(value);
-                lowPointer.setNext(newNode);
-                lowPointer = newNode;
-                newNode.setNext(next);
-                LinkedList<T> hiNext = highPointer.getNext();
-                if (hiNext != null) {
-                    highPointer.setValue(next.getValue());
-                    highPointer.setNext(hiNext.getNext());
-                } else {
-                    highPointer.setValue(null);
-                    LinkedList<T> current = lowPointer;
-                    while (current != null && current.getNext() != null) {
-                        if (current.getNext().getValue() == null)
-                            current.setNext(null);
-                        current = current.getNext();
-                    }
-                }
-            }
-            highPointer = highPointer.getNext();
-        }
 
+  static <T extends Comparable<T>> void partition(LinkedList<T> list, T partitionPoint) {
+    LinkedList<T> clone = list.copy();
+    LinkedList<T> lowPointer = list;
+    LinkedList<T> highPointer = list.getNext();
+    while (highPointer != null) {
+      T value = highPointer.getValue();
+      if (value.compareTo(partitionPoint) <= 0) {
+        LinkedList<T> next = lowPointer.getNext();
+        LinkedList<T> newNode = new LinkedList<>(value);
+        lowPointer.setNext(newNode);
+        lowPointer = newNode;
+        newNode.setNext(next);
+        LinkedList<T> hiNext = highPointer.getNext();
+        if (hiNext != null) {
+          highPointer.setValue(next.getValue());
+          highPointer.setNext(hiNext.getNext());
+        } else {
+          highPointer.setValue(null);
+          LinkedList<T> current = lowPointer;
+          while (current != null && current.getNext() != null) {
+            if (current.getNext().getValue() == null) {
+              current.setNext(null);
+            }
+            current = current.getNext();
+          }
+        }
+      }
+      highPointer = highPointer.getNext();
     }
+
+  }
 }

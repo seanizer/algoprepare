@@ -5,16 +5,17 @@ import java.util.TreeMap;
 
 // https://www.hackerrank.com/challenges/birthday-cake-candles
 public class BirthdayCakeCandles {
-    static int birthdayCakeCandles(int[] ar) {
 
-        NavigableMap<Integer, Integer> map = new TreeMap<>();
-        for (int i : ar) {
-            map.put(i, map.getOrDefault(i, 0) + 1);
-        }
+  static int birthdayCakeCandles(int[] ar) {
 
-        return map.lastEntry().getValue();
-
-
+    NavigableMap<Integer, Integer> map = new TreeMap<>();
+    for (int i : ar) {
+      map.put(i, map.getOrDefault(i, 0) + 1);
     }
+
+    return map.lastEntry().getValue();
+
+
+  }
 
 }

@@ -15,27 +15,27 @@ Output: 9 - > 1 -> 2. That is, 912.
  */
 public class SumList {
 
-    static LinkedList<Integer> sum(LinkedList<Integer> left, LinkedList<Integer> right) {
-        int leftIntValue = toInt(left);
-        int rightIntValue = toInt(right);
-        return toList(leftIntValue + rightIntValue);
-    }
+  static LinkedList<Integer> sum(LinkedList<Integer> left, LinkedList<Integer> right) {
+    int leftIntValue = toInt(left);
+    int rightIntValue = toInt(right);
+    return toList(leftIntValue + rightIntValue);
+  }
 
-    private static LinkedList<Integer> toList(int i) {
-        String s = String.valueOf(i);
-        LinkedList<Integer> list = new LinkedList<>(Integer.parseInt("" + s.charAt(0)));
-        for (int j = 1; j < s.length(); j++) {
-            list.add(Integer.parseInt("" + s.charAt(j)));
-        }
-        return list;
+  private static LinkedList<Integer> toList(int i) {
+    String s = String.valueOf(i);
+    LinkedList<Integer> list = new LinkedList<>(Integer.parseInt("" + s.charAt(0)));
+    for (int j = 1; j < s.length(); j++) {
+      list.add(Integer.parseInt("" + s.charAt(j)));
     }
+    return list;
+  }
 
-    private static int toInt(LinkedList<Integer> list) {
-        int value = 0;
-        for (Integer integer : list) {
-            value = value * 10 + integer;
-        }
-        return value;
+  private static int toInt(LinkedList<Integer> list) {
+    int value = 0;
+    for (Integer integer : list) {
+      value = value * 10 + integer;
     }
+    return value;
+  }
 
 }
