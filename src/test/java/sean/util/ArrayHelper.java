@@ -7,6 +7,10 @@ public class ArrayHelper {
     return values;
   }
 
+  public static int[][] arr(int[]... arrays) {
+    return arrays;
+  }
+
   public static long[] longArr(long... values) {
     return values;
   }
