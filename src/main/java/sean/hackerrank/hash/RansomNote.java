@@ -5,20 +5,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// https://www.hackerrank.com/challenges/ctci-ransom-note
 public class RansomNote {
 
   static void checkMagazine(String[] magazine, String[] note) {
+    String result = doCheckMagazine(magazine, note);
+    System.out.println(result);
+
+  }
+
+  static String doCheckMagazine(String[] magazine, String[] note) {
+    String result = "Yes";
     MultiSet<String> ms = new MultiSet<>();
     ms.addAll(Arrays.asList(magazine));
     for (String word : note) {
       if (!ms.removeOne(word)) {
-        System.out.println("No");
-        return;
-
+        result = "No";
+        break;
       }
     }
-    System.out.println("Yes");
-
+    return result;
   }
 
   static class MultiSet<T> {

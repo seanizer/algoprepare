@@ -5,20 +5,32 @@ public class ArrayQuery {
 
   static long arrayManipulation(int n, int[][] queries) {
 
-    long[] arr = new long[n + 1];
-    for (int[] query : queries) {
-      int leftOffset = query[0] - 1;
-      int rightOffset = query[1];
-      int delta = query[2];
-      arr[leftOffset] += delta;
-      arr[rightOffset] -= delta;
+    long[] start = new long[n + 1];
+    long[] end = new long[n + 1];
+
+    for (int i = 0; i < queries.length; i++) {
+      int[] line = queries[i];
+      int a = line[0];
+      int b = line[1];
+      long k = line[2];
+
+      start[a] += k;
+      end[b] += k;
     }
-    long sum = 0;
-    long max = 0;
-    for (int i = 0; i < arr.length - 1; i++) {
-      sum += arr[i];
-      max = Math.max(max, sum);
+
+    long sum = 0L;
+    long max = -1L;
+
+    for (int i = 1; i < n + 1; i++) {
+      sum += start[i];
+
+      if (sum > max) {
+        max = sum;
+      }
+
+      sum -= end[i];
     }
+
     return max;
 
   }

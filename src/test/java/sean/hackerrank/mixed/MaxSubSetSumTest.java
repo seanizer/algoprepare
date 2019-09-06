@@ -2,31 +2,37 @@ package sean.hackerrank.mixed;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static sean.hackerrank.mixed.MaxSubSetSum.maxSubsetSum;
+import static sean.util.ArrayHelper.arr;
+import static sean.util.FileHelper.intArrayFromFile;
 
-import java.util.Arrays;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.api.Test;
 
-@Disabled("Not implemented yet")
 class MaxSubSetSumTest {
 
-  @ParameterizedTest
-  @EnumSource(Scenario.class)
-  void subSetSumMax(Scenario scenario) {
-    assertThat(maxSubsetSum(scenario.arr)).isEqualTo(scenario.expectation);
+
+  @Test
+  void sampleInput0() {
+    assertThat(maxSubsetSum(arr(3, 7, 4, 6, 5))).isEqualTo(13);
   }
 
-  private enum Scenario {
-    CASE1("3 7 4 6 5", 13);
+  @Test
+  void sampleInput1() {
+    assertThat(maxSubsetSum(arr(3, 5, -7, 8, 10))).isEqualTo(15);
+  }
 
-    private final int[] arr;
-    private final int expectation;
+  @Test
+  void testCase8() {
+    assertThat(maxSubsetSum(intArrayFromFile("maxSubSetSum8.txt"))).isEqualTo(76497274);
+  }
 
-    Scenario(String input, int expectation) {
-      this.arr = Arrays.stream(input.trim().split("\\s+")).mapToInt(Integer::parseInt).toArray();
-      this.expectation = expectation;
-    }
+  @Test
+  void testCase9() {
+    assertThat(maxSubsetSum(intArrayFromFile("maxSubSetSum9.txt"))).isEqualTo(81660407);
+  }
+
+  @Test
+  void testCase11() {
+    assertThat(maxSubsetSum(intArrayFromFile("maxSubSetSum11.txt"))).isEqualTo(65027214);
   }
 
 

@@ -14,8 +14,6 @@ public class BirthdayCakeCandles {
     }
 
     return map.lastEntry().getValue();
-
-
   }
 
 }

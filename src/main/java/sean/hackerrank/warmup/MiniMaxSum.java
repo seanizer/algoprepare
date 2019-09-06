@@ -14,6 +14,5 @@ public class MiniMaxSum {
 
     System.out.printf("%d %d%n", min, max);
 
-
   }
 }

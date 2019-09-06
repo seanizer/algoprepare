@@ -2,20 +2,14 @@ package sean.hackerrank.strings;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
+import sean.util.FileHelper;
 
 class SherlockAndValidStringTest {
 
   static String loadFromFile(String fileName) {
-    try {
-      return new String(Files.readAllBytes(Paths.get("src", "test", "resources", fileName))).trim();
-    } catch (IOException e) {
-      throw new IllegalArgumentException(e);
-    }
+    return FileHelper.readFileToString(fileName).trim();
   }
 
   @ParameterizedTest

@@ -21,10 +21,4 @@ public class MinSwap2 {
     return swaps;
   }
 
-  static void swap(int[] arr, int pos1, int pos2) {
-    int tmp = arr[pos1];
-    arr[pos1] = arr[pos2];
-    arr[pos2] = tmp;
-  }
-
 }
